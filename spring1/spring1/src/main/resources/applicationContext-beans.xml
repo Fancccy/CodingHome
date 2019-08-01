@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="bean1" class="com.ming.bean.Bean1">
+        <property name="strValue" value="zhangsan"/>
+        <property name="intValue">
+            <value>123</value>
+        </property>
+        <property name="listValue">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </list>
+        </property>
+
+        <property name="setValue">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+                <value>set3</value>
+            </set>
+        </property>
+
+        <property name="mapValue">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2">
+                    <value>value2</value>
+                </entry>
+                <entry key="key3" value="value3"/>
+            </map>
+        </property>
+
+        <property name="arrayStr">
+            <list>
+                <value>array1</value>
+                <value>array2</value>
+                <value>array3</value>
+            </list>
+        </property>
+
+        <!--date-->
+        <property name="date" value="2019-08-01"/>
+    </bean>
+
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+       <property name="customEditors">
+           <map>
+               <entry key="java.util.Date" value="com.ming.bean.ConverDate"/>
+           </map>
+       </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,19 @@
+spring IOC
+  * 添加maven jar包到项目中去
+      spring context
+      spring beans
+      spring core
+      spring aop
+      spring tx
+  * 添加spring的核心配置文件
+       applicationContext.xml 【spring、spring框架，spring容器，spring技术】
+       IOC(DI)
+          * setter (recommend)
+          * constructor
+          * interface
+
+          在转换的过程中date类型需要我们自己转换
+          * 自定义转换类
+          * 把自定义转换类交给spring来管理【注册自定义转换类给spring容器】
+          * 在程序中spring使用我们的自定义转换器进行转换
+
